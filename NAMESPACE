@@ -1,2 +1,4 @@
 import(deSolve, geiger, ape, caper, matrixStats)
+importFrom(expm,expAtv)
+importFrom(picante,mntd,mpd)
 exportPattern("^[[:alpha:]]+")

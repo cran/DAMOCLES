@@ -1,14 +1,17 @@
 DAMOCLES_loglik_choosepar = function(trparsopt,trparsfix,idparsopt,idparsfix,phy,pa1,pa2,pchoice,edgeTList)
 {
-pa = cbind(pa1,pa2)
-trpars1 = rep(0,3)
-trpars1[idparsopt] = trparsopt
-if(length(idparsfix) != 0) { trpars1[idparsfix] = trparsfix }
-if(max(trpars1) > 1 || min(trpars1) < 0)
-{ loglik = -Inf } else {
-pars1 = trpars1/(1 - trpars1)
-loglik = DAMOCLES_loglik(phy,pa,pars1,pchoice,edgeTList)}
-return(loglik)
+   pa = cbind(pa1,pa2)
+   trpars1 = rep(0,3)
+   trpars1[idparsopt] = trparsopt
+   if(length(idparsfix) != 0) { trpars1[idparsfix] = trparsfix }
+   if(max(trpars1) > 1 || min(trpars1) < 0)
+   {
+      loglik = -Inf
+   } else {
+      pars1 = trpars1/(1 - trpars1)
+      loglik = DAMOCLES_loglik(phy,pa,pars1,pchoice,edgeTList)
+   }
+   return(loglik)
 }
 
 DAMOCLES_simplex = function(trparsopt,trparsfix,idparsopt,idparsfix,phy,pa1,pa2,pars2,edgeTList)
@@ -203,7 +206,7 @@ DAMOCLES_ML = function(
       cat("Optimization has not converged. Try again with different starting values.\n")
     } else {
       MLtrpars = unlist(out$par)
-      MLpars = MLtrpars/(1-MLtrpars)
+      MLpars = MLtrpars/(1 - MLtrpars)
       out$par = list(MLpars)
       MLpars1 = rep(0,3)
       MLpars1[idparsopt] = MLpars
@@ -217,3 +220,4 @@ DAMOCLES_ML = function(
     }
   }  
 }
+

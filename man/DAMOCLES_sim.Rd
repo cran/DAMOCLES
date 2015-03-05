@@ -43,11 +43,11 @@ Simulates DAMOCLES
   \item{keepExtinct}{whether to retain data for extinct lineages}      
   }
 \value{A list of two tables. The first table contains the following columns:
-The first column contains the vector of tip lables in the phylogeny
+The first column contains the vector of tip labels in the phylogeny
 The last column contains the presence (1) or absence (0) of the species
 The second table has dimensions d x N where d is the number of trait dimensions and N is the number of species. It contains the trait values.}
 \references{
-Work in progress. Please contact r.s.etienne@rug.nl for updated info.
+Pigot, A.L. & R.S. Etienne (2015). A new dynamic null model for phylogenetic community structure. Ecology Letters 18: 153-163.
 }
 \author{Alex L. Pigot}
 \seealso{
@@ -56,10 +56,10 @@ Work in progress. Please contact r.s.etienne@rug.nl for updated info.
 }
 \examples{
 #create random phylogeny
-phy <- rcoal(10)
+phy = rcoal(10)
 		
 #run DAMOCLES		
-out <- DAMOCLES_sim(
+out = DAMOCLES_sim(
   phy,
   gamma_0 = 1.5,
   gamma_td =0,
@@ -80,12 +80,12 @@ out <- DAMOCLES_sim(
   )
 
 #the output consists of a list		
-patable <-out[[1]] # the first element is the presence absence table
-traits <-out[[2]] # this is a matrix of traits values
+patable = out[[1]] # the first element is the presence absence table
+traits = out[[2]] # this is a matrix of traits values
 
 #show presence/absence on the tree
-patable$col <- rep("black",dim(patable)[1])
-patable$col[which(patable$state==1)] <- "red"
+patable$col = rep("black",dim(patable)[1])
+patable$col[which(patable$state == 1)] = "red"
 plot(phy,tip.col = patable$col)
 }
 \keyword{ models }

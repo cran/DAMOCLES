@@ -29,7 +29,7 @@ Computes likelihood for the presence-absence data of species in a local communit
 }
 \value{The loglikelihood}
 \references{
-Work in progress. Please contact r.s.etienne@rug.nl for updated info.
+Pigot, A.L. & R.S. Etienne (2015). A new dynamic null model for phylogenetic community structure. Ecology Letters 18: 153-163.
 }
 \author{Rampal S. Etienne}
 \seealso{

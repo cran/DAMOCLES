@@ -63,8 +63,7 @@ but only gamma_0. In that case idparsopt must be c(2). The default is to fix all
  \item{conv}{ gives a message on convergence of optimization; conv = 0 means convergence}
 }
 \references{
-Work in progress. Please contact r.s.etienne@rug.nl for updated info.
-}
+Pigot, A.L. & R.S. Etienne (2015). A new dynamic null model for phylogenetic community structure. Ecology Letters 18: 153-163.}
 \author{
 Rampal S. Etienne
 }
@@ -77,7 +76,7 @@ data(NWPrimates_data)
 out = DAMOCLES_ML(
    phy = NWPrimates_data[[1]],
    pa = NWPrimates_data[[2]],
-   initparsopt = c(0.05,0.05),
+   initparsopt = c(0.01,1.8),
    idparsopt = c(1,2),
    parsfix = c(0),
    idparsfix = c(3),
